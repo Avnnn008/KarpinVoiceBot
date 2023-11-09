@@ -1,8 +1,8 @@
 import { Telegraf } from "telegraf";
-import config from 'config'
-import { VOICELIST } from "./voicelist"; 
+import { VOICELIST } from "./voicelist.js";
+import 'dotenv/config'
 
-const bot = new Telegraf(config.get('TELEGRAM_BOT_TOKEN'))
+const bot = new Telegraf(process.env.TELEGRAM_BOT_TOKEN)
 
 bot.on('inline_query', ctx => {
     const result = 
