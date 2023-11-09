@@ -1,0 +1,12 @@
+meta:
+  environment: node
+  toolchain:
+    name: npm
+    version: 19
+build:
+  artifacts:
+    '*': /
+run:
+  scriptName: /src/index.js
+  persistenceMount: /data
+  containerPort: 80
