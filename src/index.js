@@ -4,7 +4,7 @@ import { VOICELIST } from "./voicelist";
 
 const bot = new Telegraf(config.get('TELEGRAM_BOT_TOKEN'))
 
-bot.on('inline_query', async ctx => {
+bot.on('inline_query', ctx => {
     const result = 
     VOICELIST.map(el=> ({
         id: Math.random().toString(),
@@ -13,7 +13,7 @@ bot.on('inline_query', async ctx => {
         title: el.name
     }))
 
-    await ctx.answerInlineQuery(result)
+    ctx.answerInlineQuery(result)
 })
 
 
